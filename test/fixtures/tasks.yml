@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  subtask: false
+  parent_id: 1
+  recurring: false
+  due_date: 2015-01-20 19:21:45
+  end_date: 2015-01-20
+  forever: false
+  display_order: 1
+
+two:
+  name: MyString
+  subtask: false
+  parent_id: 1
+  recurring: false
+  due_date: 2015-01-20 19:21:45
+  end_date: 2015-01-20
+  forever: false
+  display_order: 1

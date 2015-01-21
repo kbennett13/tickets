@@ -1,0 +1,31 @@
+<%= form_for :task, url: tasks_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :subtask %><br>
+    <%= f.check_box :subtask %>
+  </p>
+
+  <p>
+    <%= f.label :recurring %><br>
+    <%= f.check_box :recurring %>
+  </p>
+
+  <!-- <p>
+    <%= f.collection_select :parent_id, Task.all, :id, :name %>
+  </p> -->
+
+  <%= f.select(:parent_id) do %>
+    <%= content_tag(:option, "No Parent", value: nil) %>
+    <% Task.all.each do |c| %>
+      <%= content_tag(:option, c.name, value: c.id) %>
+    <% end %>
+  <% end %>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
