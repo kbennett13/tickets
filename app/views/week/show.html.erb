@@ -1,11 +1,18 @@
-<%= tasks = Task.where(due_date: @start_date..@start_date + 1.week) %>
+Week Of: <%= @start_date.strftime("%B %e, %Y") %><br>
+
+<% due = Task.where("fun = false AND personal = false AND due_date >= :start_date AND created_at <= :end_date",
+{ start_date: @start_date, end_date: @start_date + 1.week }) %>
+<% fun = Task.where("fun = true AND personal = true AND due_date >= :start_date AND created_at <= :end_date",
+{ start_date: @start_date, end_date: @start_date + 1.week }) %>
 
 <div>
+  Things Due This Week: <br>
   <ul>
   </ul>
 </div>
 
 <div>
+  Things To Look Forward To This Week: <br>
   <ul>
   </ul>
 </div>

@@ -1,0 +1,11 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to_unless_current("Task View", { controller: "tasks", action: "index"}) %></li>
+        <li><%= link_to_unless_current("Day View", { controller: "day", action: "show"}) %></li>
+        <li><%= link_to_unless_current("Week View", { controller: "week", action: "show"}) %></li>
+      </ul>
+    </nav>
+  </div>
+</header>

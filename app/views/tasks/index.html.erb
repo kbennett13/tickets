@@ -1,21 +1,23 @@
-<h1>Listing tasks</h1>
- 
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Subtask</th>
-    <th>Parent Id</th>
-    <th>Recurring</th>
-  </tr>
- 
-  <% @tasks.each do |task| %>
+<div class="center jumbotron">"
+  <h1>Listing tasks</h1>
+   
+  <table>
     <tr>
-      <td><%= task.id %></td>
-      <td><%= task.name %></td>
-      <td><%= task.subtask %></td>
-      <td><%= task.parent_id %></td>
-      <td><%= task.recurring %></td>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Subtask</th>
+      <th>Parent Id</th>
+      <th>Recurring</th>
     </tr>
-  <% end %>
-</table>
+   
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.id %></td>
+        <td><%= task.name %></td>
+        <td><%= task.subtask %></td>
+        <td><%= task.parent_id %></td>
+        <td><%= task.recurring %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

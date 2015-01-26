@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150121002408) do
+ActiveRecord::Schema.define(version: 20150121051524) do
 
   create_table "tags", force: true do |t|
     t.string   "text"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20150121002408) do
     t.date     "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "fun"
+    t.boolean  "personal"
   end
 
 end

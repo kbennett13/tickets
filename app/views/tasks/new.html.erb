@@ -14,17 +14,40 @@
     <%= f.check_box :recurring %>
   </p>
 
-  <!-- <p>
-    <%= f.collection_select :parent_id, Task.all, :id, :name %>
-  </p> -->
+  <p>
+    <%= f.label :due_date %><br>
+    <%= f.datetime_local_field :due_date %>
+  </p>
 
-  <%= f.select(:parent_id) do %>
-    <%= content_tag(:option, "No Parent", value: nil) %>
-    <% Task.all.each do |c| %>
-      <%= content_tag(:option, c.name, value: c.id) %>
+  <p>
+    <%= f.label :forever %><br>
+    <%= f.check_box :forever %>
+  </p>
+
+  <p>
+    <%= f.label :end_date %><br>
+    <%= f.datetime_local_field :end_date %>
+  </p>
+
+  <p>
+    <%= f.select(:parent_id) do %>
+      <%= content_tag(:option, "No Parent", value: nil) %>
+      <% Task.all.each do |c| %>
+        <%= content_tag(:option, c.name, value: c.id) %>
+      <% end %>
     <% end %>
-  <% end %>
- 
+  </p>
+
+  <p>
+    <%= f.label :fun %><br>
+    <%= f.check_box :fun %>
+  </p>
+
+  <p>
+    <%= f.label :personal %><br>
+    <%= f.check_box :personal %>
+  </p>
+
   <p>
     <%= f.submit %>
   </p>
