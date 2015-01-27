@@ -1,18 +1,33 @@
-Week Of: <%= @start_date.strftime("%B %e, %Y") %><br>
+<div class="container-fluid">
+  <div class="row">
+    Week Of: <%= @start_date.strftime("%B %e, %Y") %><br>
+  </div>
+    <% due = Task.where("fun = false AND personal = false AND due_date >= :start_date AND created_at <= :end_date",
+    { start_date: @start_date, end_date: @start_date + 1.week }) %>
+    <% fun = Task.where("fun = true AND personal = true AND due_date >= :start_date AND created_at <= :end_date",
+    { start_date: @start_date, end_date: @start_date + 1.week }) %>
 
-<% due = Task.where("fun = false AND personal = false AND due_date >= :start_date AND created_at <= :end_date",
-{ start_date: @start_date, end_date: @start_date + 1.week }) %>
-<% fun = Task.where("fun = true AND personal = true AND due_date >= :start_date AND created_at <= :end_date",
-{ start_date: @start_date, end_date: @start_date + 1.week }) %>
+  <div class="row">
+    <div class="col-sm-6">
+      Things Due This Week: <br>
+      <ul>
+        <% due.each do |d| %>
+          <li>
+            <%= d.name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
 
-<div>
-  Things Due This Week: <br>
-  <ul>
-  </ul>
-</div>
-
-<div>
-  Things To Look Forward To This Week: <br>
-  <ul>
-  </ul>
+    <div class="col-sm-6">
+      Things To Look Forward To This Week: <br>
+      <ul>
+        <% fun.each do |f| %>
+          <li>
+            <%= f.name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
