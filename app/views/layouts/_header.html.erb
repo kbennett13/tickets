@@ -7,7 +7,7 @@
         <li><%= link_to_unless_current("Week View", { controller: "week", action: "show"}) %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Add New Task", new_task_path %></li>
+        <li><%= link_to_unless_current("Add New Task", { controller: "tasks", action: "new"}) %></li>
       </ul>
     </nav>
   </div>

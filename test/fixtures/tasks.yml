@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Task 1
   subtask: false
-  parent_id: 1
+  parent_id: 0
   recurring: false
   due_date: 2015-01-20 19:21:45
   end_date: 2015-01-20
@@ -11,10 +11,20 @@ one:
   display_order: 1
 
 two:
-  name: MyString
-  subtask: false
+  name: Subtask 1
+  subtask: true
   parent_id: 1
   recurring: false
+  due_date: 2015-01-20 19:21:45
+  end_date: 2015-01-20
+  forever: false
+  display_order: 1
+
+three:
+  name: Task 2
+  subtask: false
+  parent_id: 0
+  recurring: true
   due_date: 2015-01-20 19:21:45
   end_date: 2015-01-20
   forever: false
